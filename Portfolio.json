@@ -1,0 +1,90 @@
+{
+  "basics": {
+    "name": "Haris Suhail",
+    "shortName": "HS",
+    "label": "Student",
+    "headline": "I am currently enrolled in the BS program in Computer Science. ",
+    "summary": "Computer Science student based in Karachi, Pakistan. I learn programming languages like C, C++, HTML, CSS, Javascript and many more interesting courses including Design Thinking.",
+    "location": {
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "region": "Karachi"
+    },
+    "email": "haris124suhail@gmail.com",
+    "availability": "GU TECH",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "haris-suhail-5436482b0",
+        "url": "https://www.linkedin.com/in/haris-suhail-5436482b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2B8%2BP4H3%2FSPmTKkFSfOHPBg%3D%3D",
+      },
+      {
+        "network": "GitHub",
+        "username": "harissuhail124",
+        "url": "https://github.com/harissuhail124",
+      },
+    ]
+  },
+  "about": {
+    "intro": [
+      "I am a motivated BS Computer Science
+student with a strong interest in
+technology, problem-solving, and
+continuous learning. Alongside my
+studies, I independently manage and
+operate a local market shop, which has
+strengthened my practical skills in
+customer service, inventory
+management, basic financial handling,
+and day-to-day business operations."
+  },
+  "skills": [
+    {
+      "category": "Front-end Development"
+    },
+    {
+      "category": "Languages",
+      "items": [
+        "HTML",
+        "CSS",
+        "C",
+        "C++"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "company": "Bags'n'Bags",
+      "position": "Operations And Sales Manager ",
+      "startDate": "2023-06-01",
+      "endDate": "",
+      "summary": "Leading quality operations, managing sales records, and establishing scalable strategies to derive sales and impress our potential customers.",
+    },
+  ],
+  "education": [
+    {
+      "institution": "GU Tech",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science (BS)",
+      "startDate": "2026-09-01",
+      "endDate": ""
+    },
+    {
+      "institution": "Aisha Bawany Govt. College",
+      "area": "Pre-Engineering",
+      "studyType": "Intermediate / FSC",
+      "startDate": "2023-08-01",
+      "endDate": "2025-04-01"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Urdu",
+      "fluency": "Native"
+    }
+  ]
+}

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haris Suhail | BS Computer Science Student & Front-End Developer</title>
+  
+  <!-- Meta Information & SEO -->
+  <meta name="description" content="Personal Portfolio of Haris Suhail — BS Computer Science Student at GU Tech, Front-End Developer, and Operations Specialist based in Karachi, Pakistan. Explore academic coursework, projects, and skills.">
+  <meta name="keywords" content="Haris Suhail, Computer Science, GU Tech, Aisha Bawany Govt College, Front-End Developer, C++, JavaScript, Karachi, Pakistan, Portfolio, Bags'n'Bags">
+  <meta name="author" content="Haris Suhail">
+  <meta name="theme-color" content="#05070b">
+
+  <!-- Open Graph / Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Haris Suhail | BS Computer Science & Front-End Developer">
+  <meta property="og:description" content="Explore Haris Suhail's academic journey at GU Tech, technical skills in C, C++, HTML, CSS, JavaScript, and retail operations leadership.">
+  <meta property="og:image" content="assets/avatar.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2306b6d4'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='%23000' font-size='50' font-family='sans-serif' font-weight='900'>HS</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Keyboard Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient Dynamic Canvas Background & Glow Orbs -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="background-glows" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="navbar-wrapper" role="banner">
+    <div class="container navbar">
+      <!-- Monogram Brand Logo -->
+      <a href="#hero" class="nav-brand" aria-label="Haris Suhail Home">
+        <div class="brand-badge" aria-hidden="true">HS</div>
+        <div class="brand-text">
+          <span class="brand-name">Haris Suhail</span>
+          <span class="brand-tagline">CS @ GU TECH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-navigation" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="nav-actions">
+        <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub Profile">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/haris-suhail-5436482b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2B8%2BP4H3%2FSPmTKkFSfOHPBg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <span>Let's Connect</span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="hamburger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Menu">
+    <ul class="mobile-menu-links">
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#education" class="mobile-nav-link">Education Journey</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Technical Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects & GitHub</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Operations Experience</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact & Socials</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <div class="mobile-socials">
+        <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/haris-suhail-5436482b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2B8%2BP4H3%2FSPmTKkFSfOHPBg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:haris124suhail@gmail.com" class="social-icon-btn" aria-label="Send Email">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">Contact Haris</a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT
+       ========================================================================== -->
+  <main id="main-content">
+    
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text & Pitch -->
+          <div class="hero-content">
+            <div class="status-pill">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span class="status-text">Available for Tech Internships & Projects</span>
+            </div>
+
+            <p class="hero-greeting">Assalam-o-Alaikum, I am</p>
+            <h1 id="hero-title" class="hero-title">
+              <span class="gradient-text">Haris Suhail</span>
+            </h1>
+
+            <!-- Animated Role Rotator -->
+            <div class="typewriter-wrapper" aria-live="polite">
+              <span class="typewriter-prefix">I build as a</span>
+              <span id="typewriter-text" class="typewriter-text">BS Computer Science Student</span>
+            </div>
+
+            <p class="hero-bio">
+              Enrolled in the <strong>BS Computer Science</strong> program at <strong>GU Tech</strong>, based in Karachi, Pakistan. 
+              Bridging solid programming foundations in <strong>C, C++, HTML, CSS, and JavaScript</strong> with human-centric 
+              <strong>Design Thinking</strong> and hands-on business operations.
+            </p>
+
+            <!-- Quick Metadata Badges -->
+            <div class="hero-chips">
+              <div class="hero-chip">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                <span>GU Tech · BS Computer Science</span>
+              </div>
+              <div class="hero-chip">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Karachi, Pakistan</span>
+              </div>
+              <div class="hero-chip">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Operations & Sales Manager @ Bags'n'Bags</span>
+              </div>
+            </div>
+
+            <!-- CTAs and Social Links -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>Get in Touch</span>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </a>
+              
+              <!-- Direct Links Strip -->
+              <div class="hero-social-strip">
+                <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Visit GitHub Profile (harissuhail124)" title="GitHub">
+                  <svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/haris-suhail-5436482b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2B8%2BP4H3%2FSPmTKkFSfOHPBg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Visit LinkedIn Profile" title="LinkedIn">
+                  <svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual: Glassmorphism Avatar Card with Floating Widgets -->
+          <div class="hero-visual">
+            <div class="hero-avatar-card">
+              <!-- Floating Pill 1: Academic Track -->
+              <div class="float-card float-card-top" aria-hidden="true">
+                <div class="float-icon">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </div>
+                <div>
+                  <div class="float-text-title">GU Tech</div>
+                  <div class="float-text-sub">BS Computer Science</div>
+                </div>
+              </div>
+
+              <!-- Main Avatar Image -->
+              <div class="avatar-image-container">
+                <img src="assets/avatar.jpg" alt="Portrait illustration of Haris Suhail, BS Computer Science student and developer" class="avatar-image">
+              </div>
+
+              <!-- Floating Pill 2: Practical Management -->
+              <div class="float-card float-card-bottom" aria-hidden="true">
+                <div class="float-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="float-text-title">Bags'n'Bags</div>
+                  <div class="float-text-sub">Operations & Sales Lead</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Metric Counter Strip -->
+        <div class="glass-card stats-strip" aria-label="Key Profile Stats">
+          <div class="stat-item">
+            <div class="stat-number gradient-text-cyan">BS CS</div>
+            <div class="stat-label">Academic Program</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Core Tech Languages</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number gradient-text-cyan">3+ Yrs</div>
+            <div class="stat-label">Operations & Sales</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Fluent Languages</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. ABOUT & LEADERSHIP MATRIX SECTION
+         ========================================================================== -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot" aria-hidden="true"></span>
+            <span>Profile Overview</span>
+          </div>
+          <h2 id="about-heading" class="section-title">Academic Passion Meets <span class="gradient-text">Practical Execution</span></h2>
+          <p class="section-desc">
+            A motivated Computer Science undergraduate student with a distinct balance of technical acumen, structured problem-solving, and proven business operations skills.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Card 1: The CS Student & Developer -->
+          <article class="glass-card about-card">
+            <div>
+              <h3 class="about-card-title">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span>Computer Science & Web Engineering</span>
+              </h3>
+              <p class="about-text">
+                Enrolled in the Bachelor of Science in Computer Science (BS CS) at GU Tech. Passionate about software fundamentals, memory management in C and C++, and building engaging, accessible web applications with modern HTML, CSS, and JavaScript.
+              </p>
+              <ul class="about-features-list">
+                <li class="about-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Strong foundation in algorithmic thinking and object-oriented paradigms.</span>
+                </li>
+                <li class="about-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Modern front-end engineering with clean semantic structure and CSS glassmorphism.</span>
+                </li>
+                <li class="about-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Curriculum enriched with university-level <em>Design Thinking</em> coursework.</span>
+                </li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="#education" class="btn btn-outline-cyan btn-sm">Explore Academic Journey</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Operations & Sales Manager at Bags'n'Bags -->
+          <article class="glass-card about-card" id="experience">
+            <div>
+              <span class="exp-badge">Practical Leadership · Since June 2023</span>
+              <h3 class="exp-role-title">Operations & Sales Manager</h3>
+              <div class="exp-company">Bags'n'Bags · Karachi, Pakistan</div>
+              <div class="exp-dates">June 2023 – Present · Ongoing</div>
+              <p class="about-text">
+                Alongside university studies, independently operating and managing a physical market storefront. Leading quality operations, overseeing real-time stock inventories, maintaining sales ledgers, and delivering exceptional customer experiences that consistently drive revenue.
+              </p>
+              <div class="exp-tags">
+                <span class="exp-tag">Inventory Audits</span>
+                <span class="exp-tag">Sales Optimization</span>
+                <span class="exp-tag">Customer Relations</span>
+                <span class="exp-tag">Financial Accounting</span>
+                <span class="exp-tag">Retail Strategy</span>
+              </div>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="#contact" class="btn btn-secondary btn-sm">Connect on LinkedIn</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. EDUCATION & ACADEMIC JOURNEY (TIMELINE VIEW)
+         ========================================================================== -->
+    <section id="education" class="section" aria-labelledby="education-heading" style="background: rgba(9, 13, 24, 0.45);">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot" aria-hidden="true"></span>
+            <span>Education & Degrees</span>
+          </div>
+          <h2 id="education-heading" class="section-title">Academic Journey & <span class="gradient-text">Coursework</span></h2>
+          <p class="section-desc">
+            A comprehensive timeline detailing higher education degrees, institutions, milestones, and foundational coursework in Computer Science and Pre-Engineering.
+          </p>
+        </div>
+
+        <!-- Vertical Interactive Timeline -->
+        <div class="timeline-container">
+          
+          <!-- Milestone 1: GU Tech -->
+          <div class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-content-wrapper">
+              <article class="glass-card timeline-card">
+                <div class="timeline-header">
+                  <div class="timeline-dates">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Sept 2026 – In Progress</span>
+                  </div>
+                  <span class="section-tag" style="padding: 3px 10px; font-size: 0.72rem; margin: 0;">Current University</span>
+                </div>
+
+                <h3 class="timeline-institution">GU Tech</h3>
+                <div class="timeline-degree">Bachelor of Science (BS) in Computer Science</div>
+                <div class="timeline-location">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Karachi, Pakistan</span>
+                </div>
+
+                <p class="about-text" style="font-size: 0.94rem; margin-bottom: 16px;">
+                  Pursuing rigorous undergraduate education in Computer Science. Focusing on core software engineering principles, computational logic, systems programming, and modern human-computer interaction paradigms.
+                </p>
+
+                <!-- Key Coursework -->
+                <div class="coursework-title">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                  <span>Key Academic Coursework</span>
+                </div>
+                <div class="coursework-badges">
+                  <span class="course-badge">Programming Fundamentals (C/C++)</span>
+                  <span class="course-badge">Web Technologies (HTML, CSS, JS)</span>
+                  <span class="course-badge">Design Thinking & Innovation</span>
+                  <span class="course-badge">Discrete Mathematics</span>
+                  <span class="course-badge">Computing & Problem Solving</span>
+                  <span class="course-badge">Object-Oriented Programming (OOP)</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Milestone 2: Aisha Bawany Govt. College -->
+          <div class="timeline-item">
+            <div class="timeline-node" aria-hidden="true" style="border-color: var(--accent-purple); box-shadow: 0 0 14px var(--accent-purple);"></div>
+            <div class="timeline-content-wrapper">
+              <article class="glass-card timeline-card">
+                <div class="timeline-header">
+                  <div class="timeline-dates" style="color: #c084fc; background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2);">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Aug 2023 – Apr 2025</span>
+                  </div>
+                  <span class="section-tag" style="padding: 3px 10px; font-size: 0.72rem; margin: 0; border-color: rgba(139, 92, 246, 0.3); color: #c084fc;">Completed</span>
+                </div>
+
+                <h3 class="timeline-institution">Aisha Bawany Govt. College</h3>
+                <div class="timeline-degree" style="color: #c084fc;">Intermediate / FSC in Pre-Engineering</div>
+                <div class="timeline-location">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Karachi, Pakistan</span>
+                </div>
+
+                <p class="about-text" style="font-size: 0.94rem; margin-bottom: 16px;">
+                  Built strong analytical, quantitative, and scientific foundations in higher secondary education. Developed mathematical modeling techniques and scientific problem solving before stepping into Computer Science.
+                </p>
+
+                <!-- Key Coursework -->
+                <div class="coursework-title">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                  <span>Key Coursework & Disciplines</span>
+                </div>
+                <div class="coursework-badges">
+                  <span class="course-badge">Higher Mathematics (Calculus & Algebra)</span>
+                  <span class="course-badge">Physics & Mechanics</span>
+                  <span class="course-badge">Chemistry & Materials</span>
+                  <span class="course-badge">Analytical Logic</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Academic Certifications & Continuous Learning Cards -->
+        <div class="certifications-grid">
+          <div class="glass-card cert-card">
+            <div class="cert-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <div class="cert-title">Design Thinking & Human-Centered Innovation</div>
+              <div class="cert-issuer">GU Tech Academic Curriculum · University Module</div>
+            </div>
+          </div>
+
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.3); color: var(--accent-sky);">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div>
+              <div class="cert-title">C & C++ Programming Foundations</div>
+              <div class="cert-issuer">Algorithm Structures, Memory & OOP Concepts</div>
+            </div>
+          </div>
+
+          <div class="glass-card cert-card">
+            <div class="cert-icon" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div>
+              <div class="cert-title">Modern Front-End Web Engineering</div>
+              <div class="cert-issuer">Semantic HTML5, Advanced CSS & JavaScript ES6+</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. TECHNICAL SKILLS & TOOLS
+         ========================================================================== -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot" aria-hidden="true"></span>
+            <span>Skill Matrix</span>
+          </div>
+          <h2 id="skills-heading" class="section-title">Technical Skills & <span class="gradient-text">Proficiencies</span></h2>
+          <p class="section-desc">
+            A categorized breakdown of programming languages, front-end development technologies, computational thinking, and retail management capabilities.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-filter-nav" role="tablist" aria-label="Skills Category Filter">
+          <button class="filter-btn skills-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Skills</button>
+          <button class="filter-btn skills-filter-btn" data-filter="languages" role="tab" aria-selected="false">Programming Languages</button>
+          <button class="filter-btn skills-filter-btn" data-filter="frontend" role="tab" aria-selected="false">Front-End & Web</button>
+          <button class="filter-btn skills-filter-btn" data-filter="core" role="tab" aria-selected="false">CS Core & Design</button>
+          <button class="filter-btn skills-filter-btn" data-filter="operations" role="tab" aria-selected="false">Operations & Retail</button>
+        </div>
+
+        <!-- Skills Cards Grid -->
+        <div class="skills-grid" id="skills-container">
+          
+          <!-- C++ -->
+          <div class="glass-card skill-card" data-category="languages core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #60a5fa; background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3);">
+                <span>C++</span>
+              </div>
+              <span class="skill-level-badge">Proficient</span>
+            </div>
+            <div>
+              <h3 class="skill-name">C++ Programming</h3>
+              <p class="skill-desc">Object-Oriented Programming (OOP), file stream persistence, data encapsulation, dynamic memory, and algorithms.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <!-- C -->
+          <div class="glass-card skill-card" data-category="languages core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #38bdf8; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3);">
+                <span>C</span>
+              </div>
+              <span class="skill-level-badge">Core Mastery</span>
+            </div>
+            <div>
+              <h3 class="skill-name">C Language</h3>
+              <p class="skill-desc">Structured programming fundamentals, pointer mechanics, arrays, functions, and memory structures.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 88%;"></div>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="glass-card skill-card" data-category="languages frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #facc15; background: rgba(250, 204, 21, 0.12); border-color: rgba(250, 204, 21, 0.3);">
+                <span>JS</span>
+              </div>
+              <span class="skill-level-badge">Modern ES6+</span>
+            </div>
+            <div>
+              <h3 class="skill-name">JavaScript (ES6+)</h3>
+              <p class="skill-desc">DOM manipulation, event handling, asynchronous operations, interactive animations, and responsive web logic.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 82%;"></div>
+            </div>
+          </div>
+
+          <!-- HTML5 -->
+          <div class="glass-card skill-card" data-category="languages frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #f97316; background: rgba(249, 115, 22, 0.12); border-color: rgba(249, 115, 22, 0.3);">
+                <span>H5</span>
+              </div>
+              <span class="skill-level-badge">Semantic Standard</span>
+            </div>
+            <div>
+              <h3 class="skill-name">HTML5 Architecture</h3>
+              <p class="skill-desc">Semantic document structuring, WCAG accessibility standards, forms, SEO meta optimization, and clean markup.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="glass-card skill-card" data-category="languages frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #38bdf8; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3);">
+                <span>CSS</span>
+              </div>
+              <span class="skill-level-badge">Advanced Glassmorphism</span>
+            </div>
+            <div>
+              <h3 class="skill-name">CSS3 & UI Styling</h3>
+              <p class="skill-desc">Custom CSS custom properties, Flexbox, CSS Grid, glassmorphic filters, responsive queries, and keyframe animations.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <!-- Design Thinking -->
+          <div class="glass-card skill-card" data-category="core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #c084fc; background: rgba(192, 132, 252, 0.12); border-color: rgba(192, 132, 252, 0.3);">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"></path><line x1="9" y1="21" x2="15" y2="21"></line></svg>
+              </div>
+              <span class="skill-level-badge">Academic Module</span>
+            </div>
+            <div>
+              <h3 class="skill-name">Design Thinking</h3>
+              <p class="skill-desc">Empathy mapping, user-centered prototyping, iterative testing, and ideating creative technological solutions.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="glass-card skill-card" data-category="frontend core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border-color: rgba(244, 63, 94, 0.3);">
+                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              <span class="skill-level-badge">Version Control</span>
+            </div>
+            <div>
+              <h3 class="skill-name">Git & GitHub</h3>
+              <p class="skill-desc">Repository management, commit workflows, code versioning, and deploying web projects.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 80%;"></div>
+            </div>
+          </div>
+
+          <!-- Retail & Operations -->
+          <div class="glass-card skill-card" data-category="operations">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap" style="color: #10b981; background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3);">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              </div>
+              <span class="skill-level-badge">Professional</span>
+            </div>
+            <div>
+              <h3 class="skill-name">Operations & Inventory</h3>
+              <p class="skill-desc">Market stock management, cash reconciliation, vendor negotiations, customer sales retention, and logistics.</p>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar-progress" style="width: 92%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Languages Proficiency Cards -->
+        <div class="glass-card languages-showcase">
+          <div class="lang-item">
+            <div class="lang-flag-badge" aria-hidden="true">🇬🇧</div>
+            <div class="lang-info">
+              <div class="lang-name">English Language</div>
+              <div class="lang-fluency">Professional Working Fluency</div>
+              <div class="skill-bar-container" style="margin-top: 8px;">
+                <div class="skill-bar-progress" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang-item">
+            <div class="lang-flag-badge" aria-hidden="true">🇵🇰</div>
+            <div class="lang-info">
+              <div class="lang-name">Urdu Language</div>
+              <div class="lang-fluency">Native Proficiency</div>
+              <div class="skill-bar-container" style="margin-top: 8px;">
+                <div class="skill-bar-progress" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. PROJECTS & GITHUB HIGHLIGHTS
+         ========================================================================== -->
+    <section id="projects" class="section" aria-labelledby="projects-heading" style="background: rgba(9, 13, 24, 0.45);">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot" aria-hidden="true"></span>
+            <span>Featured Work</span>
+          </div>
+          <h2 id="projects-heading" class="section-title">Projects & <span class="gradient-text">GitHub Highlights</span></h2>
+          <p class="section-desc">
+            Bridging algorithmic software development, systems programming in C++, and interactive glassmorphic web experiences inspired by real-world operations.
+          </p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="skills-filter-nav" role="tablist" aria-label="Projects Filter">
+          <button class="filter-btn projects-filter-btn active" data-filter="all">All Highlights</button>
+          <button class="filter-btn projects-filter-btn" data-filter="systems">Systems & C++</button>
+          <button class="filter-btn projects-filter-btn" data-filter="web">Front-End & Web</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- Project 1: C++ Nexus Retail & Inventory Tracking -->
+          <article class="glass-card project-card" data-project-category="systems">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/project-inventory.jpg" alt="Nexus Retail and Inventory Tracking POS interface in dark glassmorphism style" class="project-thumbnail">
+              <div class="project-overlay"></div>
+              <span class="project-badge-corner">C++ / OOP</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Nexus Retail & Inventory Tracker</h3>
+              <p class="project-summary">
+                A robust console and file-driven inventory and point-of-sale system built in C++. Inspired by day-to-day retail operations at Bags'n'Bags to automate stock counts, alert low inventory, and track sales receipts.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">C++</span>
+                <span class="project-tag">OOP Architecture</span>
+                <span class="project-tag">File Streams</span>
+                <span class="project-tag">Data Structures</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn btn-outline-cyan btn-sm open-modal-btn" data-project-id="nexus" aria-label="Quick view details for Nexus Retail project">
+                  <span>Architecture Details</span>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View GitHub Profile">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>Repo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AlgoVisualizer Suite -->
+          <article class="glass-card project-card" data-project-category="web">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/project-algo.jpg" alt="AlgoVisualizer interactive data structures and algorithms user interface with glowing sorting bars and trees" class="project-thumbnail">
+              <div class="project-overlay"></div>
+              <span class="project-badge-corner">JavaScript & Canvas</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AlgoVisualizer v2.0</h3>
+              <p class="project-summary">
+                An interactive educational visualizer created to assist CS classmates in exploring sorting algorithms (QuickSort, Merge Sort) and Binary Search Tree traversals with step-by-step telemetry and time complexity curves.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">JavaScript ES6+</span>
+                <span class="project-tag">HTML5 Canvas</span>
+                <span class="project-tag">Algorithms</span>
+                <span class="project-tag">Coursework</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn btn-outline-cyan btn-sm open-modal-btn" data-project-id="algovis" aria-label="Quick view details for AlgoVisualizer project">
+                  <span>Architecture Details</span>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View GitHub Profile">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>Repo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Luxe Noir - Bags'n'Bags Storefront -->
+          <article class="glass-card project-card" data-project-category="web">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/project-ecommerce.jpg" alt="Luxe Noir dark glassmorphism e-commerce digital storefront UI preview" class="project-thumbnail">
+              <div class="project-overlay"></div>
+              <span class="project-badge-corner">UI/UX & Web</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Luxe Noir - Bags'n'Bags E-Shop</h3>
+              <p class="project-summary">
+                A luxury glassmorphic e-commerce prototype tailored for Bags'n'Bags. Features dynamic catalog filters, interactive cart drawer, local storage persistence, and accessible mobile design.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">Vanilla CSS3</span>
+                <span class="project-tag">JavaScript ES6</span>
+                <span class="project-tag">Design Thinking</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn btn-outline-cyan btn-sm open-modal-btn" data-project-id="luxenoir" aria-label="Quick view details for Luxe Noir project">
+                  <span>Architecture Details</span>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View GitHub Profile">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>Repo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- GitHub Profile Callout Banner -->
+        <aside class="glass-card github-banner-card" aria-label="GitHub Profile Highlight">
+          <div class="github-banner-left">
+            <div class="github-octo-icon">
+              <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <div class="github-banner-title">Check Out My Repositories On GitHub</div>
+              <p class="github-banner-desc">Follow ongoing projects, coursework assignments, code snippets, and front-end experiments @<strong>harissuhail124</strong></p>
+            </div>
+          </div>
+          <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Visit @harissuhail124</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. CONTACT & SOCIALS SECTION
+         ========================================================================== -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="section-tag-dot" aria-hidden="true"></span>
+            <span>Get In Touch</span>
+          </div>
+          <h2 id="contact-heading" class="section-title">Let's Build Something <span class="gradient-text">Exceptional</span></h2>
+          <p class="section-desc">
+            Whether you have an internship opportunity, a freelance project, academic collaboration, or just want to say hi — feel free to drop a message!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Direct Details Card -->
+          <div class="glass-card contact-info-card">
+            
+            <!-- Email Item with Instant Clipboard Copy -->
+            <div class="contact-method">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div style="flex: 1;">
+                <div class="contact-label">Direct Email</div>
+                <a href="mailto:haris124suhail@gmail.com" class="contact-value">haris124suhail@gmail.com</a>
+                <br>
+                <button type="button" class="copy-email-btn" id="copy-email-btn" aria-label="Copy email address to clipboard">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy Email</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Location Item -->
+            <div class="contact-method">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="contact-label">Location & Timezone</div>
+                <div class="contact-value">Karachi, Pakistan (PKT · UTC+5)</div>
+                <div style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px;">Open to on-site in Karachi or remote worldwide</div>
+              </div>
+            </div>
+
+            <!-- Academic Status Item -->
+            <div class="contact-method">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div>
+                <div class="contact-label">Current University</div>
+                <div class="contact-value">GU Tech · BS Computer Science</div>
+              </div>
+            </div>
+
+            <!-- Social Links Grid -->
+            <div>
+              <div class="contact-label" style="margin-bottom: 12px;">Verified Profiles</div>
+              <div class="social-buttons-grid">
+                <a href="https://www.linkedin.com/in/haris-suhail-5436482b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2B8%2BP4H3%2FSPmTKkFSfOHPBg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-card-link">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="social-card-link">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="glass-card contact-form-card">
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 8px;">Send a Direct Message</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 22px;">Fill out this quick form to initiate an email directly to Haris.</p>
+
+            <form id="portfolio-contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Alex Morgan" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="e.g. alex@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="Internship Opportunity / Project Inquiry">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message *</label>
+                <textarea id="contact-message" class="form-control" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+              <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="nav-brand">
+          <div class="brand-badge" aria-hidden="true" style="width: 36px; height: 36px; font-size: 0.9rem;">HS</div>
+          <div>
+            <span class="brand-name" style="font-size: 1rem;">Haris Suhail</span>
+            <div class="footer-copy">BS Computer Science · GU Tech · Karachi, Pakistan</div>
+          </div>
+        </div>
+
+        <div class="hero-social-strip">
+          <a href="https://github.com/harissuhail124" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/haris-suhail-5436482b0/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2B8%2BP4H3%2FSPmTKkFSfOHPBg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:haris124suhail@gmail.com" class="social-icon-btn" aria-label="Email">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-dim);">
+        <p>© 2026 Haris Suhail. All rights reserved.</p>
+        <p>Built with Semantic HTML5, Vanilla CSS3 & Vanilla JavaScript · WCAG AA Compliant</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PROJECT DETAIL MODAL DIALOG
+       ========================================================================== -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-heading">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close modal dialog">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-body" id="modal-content">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back To Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top of page">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- JavaScript Module -->
+  <script src="js/main.js"></script>
+</body>
+</html>
