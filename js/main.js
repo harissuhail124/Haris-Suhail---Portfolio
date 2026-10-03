@@ -385,7 +385,7 @@ const projectData = {
   portfolio: {
     title: "Haris Suhail - Personal Portfolio Website",
     category: "Full Frontend Architecture",
-    image: "assets/avatar.jpg",
+    image: "assets/haris-suhail.jpg",
     description: "The current portfolio website you are viewing! Engineered completely with semantic HTML5, Vanilla CSS3 tokens, and JavaScript without bloated frameworks.",
     features: [
       "Custom dark glassmorphic design system using CSS variables, backdrop blurs, and neon accents",
