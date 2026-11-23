@@ -59,6 +59,16 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--border
 dialog::backdrop{background:rgba(0,0,0,.7)}
 dialog h2{margin:6px 0 4px}dialog p{margin:14px 0;color:#cfcfcf}
 .close{float:right;background:none;border:1px solid var(--border);color:var(--text);border-radius:10px;padding:4px 12px;cursor:pointer;font:inherit}
+.card.click{cursor:pointer}
+.card h3 a{text-decoration:none}
+.card.click:hover h3 a{text-decoration:underline}
+.detail{max-width:760px;padding-bottom:40px}
+.back{display:inline-block;margin:36px 0 18px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--text)}
+.detail h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:6px 0 14px}
+.detail p{color:#cfcfcf;margin:14px 0}
+.detail ul.list{padding-left:20px;color:#cfcfcf;display:grid;gap:6px;margin:14px 0}
+.detail .btns{margin:24px 0 8px}
 footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 36px}
 </style>
 </head>
@@ -81,7 +91,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 3
 </nav>
 
 <main id="top">
-<div class="wrap">
+<div class="wrap" id="home">
   <header class="hero">
     <div>
       <div class="eyebrow">BS Computer Science · GU Tech · Karachi</div>
@@ -165,6 +175,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 3
     </div>
   </section>
 </div>
+<div class="wrap detail" id="detail" hidden></div>
 </main>
 <footer>© 2026 Haris Suhail · Karachi, Pakistan</footer>
 
@@ -176,8 +187,12 @@ const GH_USER = "harissuhail124";
 const HIDE_REPOS = ["harissuhail124", "haris-suhail"]; // repo names to never show
 
 const FEATURED = [
-  { name: "Unscroll: Digital Well-Being App", desc: "A progressive web app helping school and university students build healthier screen habits. Built for my Design Thinking midterm sprint, informed by a student survey and interviews.", tags: ["PWA", "Design Thinking", "User Research"], url: "https://unscroll-seven.vercel.app", label: "Live demo" },
-  { name: "Bags’n’Bags", desc: "The website for my retail business in Karachi, a shop I have run alongside my studies since June 2023.", tags: ["Web", "Business"], url: "https://bagsnbags.vercel.app", label: "Visit site" }
+  { slug: "unscroll", name: "Unscroll: Digital Well-Being App", desc: "A progressive web app helping school and university students build healthier screen habits. Built for my Design Thinking midterm sprint, informed by a student survey and interviews.",
+    details: ["Built as a progressive web app, so it works well on phones", "Designed around a 13-question student survey and anonymised interviews", "Made for my Design Thinking midterm sprint on digital well-being and mental health", "Deployed on Vercel"],
+    tags: ["PWA", "Design Thinking", "User Research"], url: "https://unscroll-seven.vercel.app", label: "Live demo" },
+  { slug: "bagsnbags", name: "Bags’n’Bags", desc: "The website for my retail business in Karachi, a shop I have run alongside my studies since June 2023.",
+    details: ["The online home of the shop I run in Karachi", "Deployed on Vercel", "Shaped by day-to-day experience of stock, sales and customers"],
+    tags: ["Web", "Business"], url: "https://bagsnbags.vercel.app", label: "Visit site" }
 ];
 
 /* LeetCode: fill in stats and problems when you like; empty ones stay hidden. */
@@ -243,13 +258,22 @@ function tagList(arr) { const ul = el("ul", "tags"); arr.forEach(t => ul.appendC
 function link(href, text) { const a = el("a", "", text); a.href = href; a.target = "_blank"; a.rel = "noopener"; return a; }
 function fmt(d) { return new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }); }
 
+const BASE_TITLE = document.title;
+let REPOS = [], reposState = "loading";
+function ext(u) { return /^https?:/.test(u) ? u : "https://" + u; }
+
+function projectCard(slug, name, desc, tags, meta, links) {
+  const c = el("article", "card click"); c.dataset.slug = slug;
+  const h = el("h3"); const a = el("a", "", name); a.href = "/project/" + encodeURIComponent(slug); h.appendChild(a);
+  c.append(h, el("p", "", desc));
+  if (tags.length) c.appendChild(tagList(tags));
+  if (meta) c.appendChild(el("div", "meta", meta));
+  if (links.length) { const row = el("div", "row"); links.forEach(l => row.appendChild(link(l[0], l[1]))); c.appendChild(row); }
+  return c;
+}
+
 /* featured projects */
-FEATURED.forEach(p => {
-  const c = el("article", "card");
-  c.append(el("h3", "", p.name), el("p", "", p.desc), tagList(p.tags));
-  if (p.url) { const r = el("div", "row"); r.appendChild(link(p.url, p.label || "Open")); c.appendChild(r); }
-  $("#featured").appendChild(c);
-});
+FEATURED.forEach(p => $("#featured").appendChild(projectCard(p.slug, p.name, p.desc, p.tags, "", p.url ? [[p.url, p.label || "Open"]] : [])));
 
 /* GitHub repos */
 async function loadRepos() {
@@ -263,26 +287,68 @@ async function loadRepos() {
     try { sessionStorage.setItem(key, JSON.stringify(data)); } catch (e) {}
   }
   const hide = HIDE_REPOS.map(n => n.toLowerCase());
-  const feat = FEATURED.map(f => f.name.toLowerCase());
-  const repos = data.filter(r => !r.fork && !hide.includes(r.name.toLowerCase()) && !r.name.toLowerCase().includes("unscroll"));
-  if (!repos.length) { $("#ghstatus").textContent = "No public repositories to show yet."; return; }
+  REPOS = data.filter(r => !r.fork && !hide.includes(r.name.toLowerCase()) && !r.name.toLowerCase().includes("unscroll"));
+  reposState = "done";
+  if (!REPOS.length) { $("#ghstatus").textContent = "No public repositories to show yet."; return; }
   $("#ghstatus").remove();
-  repos.forEach(r => {
-    const c = el("article", "card");
-    c.append(el("h3", "", r.name.replace(/[-_]+/g, " ")), el("p", "", r.description || "No description yet."));
+  REPOS.forEach(r => {
     const t = []; if (r.language) t.push(r.language); (r.topics || []).slice(0, 3).forEach(x => t.push(x));
-    if (t.length) c.appendChild(tagList(t));
-    c.appendChild(el("div", "meta", "Updated " + fmt(r.pushed_at)));
-    const row = el("div", "row"); row.appendChild(link(r.html_url, "Repo"));
-    if (r.homepage) row.appendChild(link(/^https?:/.test(r.homepage) ? r.homepage : "https://" + r.homepage, "Live"));
-    c.appendChild(row);
-    $("#repos").appendChild(c);
+    const links = [[r.html_url, "Repo"]]; if (r.homepage) links.push([ext(r.homepage), "Live"]);
+    $("#repos").appendChild(projectCard(r.name.toLowerCase(), r.name.replace(/[-_]+/g, " "), r.description || "No description yet.", t, "Updated " + fmt(r.pushed_at), links));
   });
 }
 loadRepos().catch(() => {
+  reposState = "error";
   const s = $("#ghstatus"); s.textContent = "Couldn’t load GitHub projects right now. ";
   s.appendChild(link("https://github.com/" + GH_USER, "See them on GitHub"));
+}).finally(() => route());
+
+/* project pages: /project/<slug> */
+function showHome() { $("#detail").hidden = true; $("#home").hidden = false; document.title = BASE_TITLE; }
+function showProject(slug) {
+  const d = $("#detail"); d.replaceChildren();
+  let name, desc, tags = [], links = [], points = [], meta = "";
+  const f = FEATURED.find(x => x.slug === slug);
+  const r = !f && REPOS.find(x => x.name.toLowerCase() === slug);
+  if (f) { name = f.name; desc = f.desc; tags = f.tags; points = f.details || []; if (f.url) links.push([f.url, f.label || "Open"]); }
+  else if (r) {
+    name = r.name.replace(/[-_]+/g, " "); desc = r.description || "No description yet.";
+    tags = [r.language].concat(r.topics || []).filter(Boolean); meta = "Last updated " + fmt(r.pushed_at);
+    links.push([r.html_url, "View repository"]); if (r.homepage) links.push([ext(r.homepage), "Live site"]);
+  } else if (reposState === "loading") { name = "Loading…"; desc = "Fetching project details."; }
+  else { name = "Project not found"; desc = "This project doesn’t exist or has been removed."; }
+  const back = el("a", "back", "← All projects"); back.href = "/#projects";
+  d.append(back, el("div", "eyebrow", "Project"), el("h1", "", name));
+  if (meta) d.appendChild(el("div", "meta", meta));
+  if (tags.length) d.appendChild(tagList(tags));
+  d.appendChild(el("p", "", desc));
+  if (points.length) { const ul = el("ul", "list"); points.forEach(t => ul.appendChild(el("li", "", t))); d.appendChild(ul); }
+  if (links.length) { const b = el("div", "btns"); links.forEach((l, i) => { const a = link(l[0], l[1]); a.className = "btn" + (i ? "" : " p"); b.appendChild(a); }); d.appendChild(b); }
+  $("#home").hidden = true; d.hidden = false;
+  document.title = name + " | Haris Suhail";
+}
+function route(path) {
+  const m = (path || location.pathname).match(/^\/project\/([^/]+)\/?$/);
+  if (m) showProject(decodeURIComponent(m[1]).toLowerCase()); else showHome();
+}
+function go(path, after) {
+  try { history.pushState(null, "", path); } catch (e) {}
+  route(path); window.scrollTo(0, 0);
+  if (after) after();
+}
+window.addEventListener("popstate", () => route());
+document.addEventListener("click", e => {
+  const a = e.target.closest("a"), href = a && a.getAttribute("href");
+  if (href && href.startsWith("/project/")) { e.preventDefault(); go(href); return; }
+  if (href && (href.startsWith("#") || href === "/#projects") && !$("#detail").hidden) {
+    e.preventDefault();
+    const t = document.querySelector(href.replace("/", ""));
+    go("/", () => { if (t) t.scrollIntoView(); });
+    return;
+  }
+  if (!a) { const c = e.target.closest(".card.click"); if (c) go("/project/" + encodeURIComponent(c.dataset.slug)); }
 });
+route();
 
 /* leetcode */
 (function () {
