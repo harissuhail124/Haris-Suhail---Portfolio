@@ -100,6 +100,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 3
       <div class="btns">
         <a class="btn p" href="#projects">View Projects</a>
         <a class="btn" href="#blog">Read the Blog</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
         <a class="btn" href="#contact">Get in Touch</a>
       </div>
     </div>
@@ -115,10 +116,11 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 3
     <div class="eyebrow">Skills</div>
     <h2>What I work with</h2>
     <div class="grid" style="margin-top:20px">
-      <div class="card"><h3>Languages</h3><ul class="tags"><li>C</li><li>C++</li><li>JavaScript</li></ul></div>
-      <div class="card"><h3>Front-end</h3><ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul></div>
-      <div class="card"><h3>Practice</h3><ul class="tags"><li>Design Thinking</li><li>Git &amp; GitHub</li><li>User Research</li></ul></div>
-      <div class="card"><h3>Operations</h3><ul class="tags"><li>Inventory</li><li>Sales</li><li>Customer relations</li></ul></div>
+      <div class="card"><h3>Languages</h3><ul class="tags"><li>C</li><li>C++</li><li>JavaScript</li><li>TypeScript</li></ul></div>
+      <div class="card"><h3>Web</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>Next.js</li><li>PWA</li></ul></div>
+      <div class="card"><h3>Backend &amp; tools</h3><ul class="tags"><li>Supabase</li><li>Vercel</li><li>Git &amp; GitHub</li></ul></div>
+      <div class="card"><h3>Design &amp; research</h3><ul class="tags"><li>Design Thinking</li><li>User Research</li><li>Affinity Mapping</li><li>Journey Mapping</li><li>User Testing</li></ul></div>
+      <div class="card"><h3>Professional</h3><ul class="tags"><li>Customer Service</li><li>Inventory</li><li>Sales Records</li><li>Operations</li></ul></div>
     </div>
   </section>
 
@@ -169,6 +171,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 3
     <p class="lead">Open to tech internships, projects and collaboration, on-site in Karachi or remote.</p>
     <div class="btns">
       <a class="btn p" href="mailto:haris124suhail@gmail.com">haris124suhail@gmail.com</a>
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
       <a class="btn" href="https://github.com/harissuhail124" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://leetcode.com/u/BJaeUlyqUw/" target="_blank" rel="noopener">LeetCode</a>
       <a class="btn" href="https://www.linkedin.com/in/haris-suhail-5436482b0/" target="_blank" rel="noopener">LinkedIn</a>
@@ -184,15 +187,18 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:64px 20px 3
 <script>
 /* ============ EDIT THESE ============ */
 const GH_USER = "harissuhail124";
-const HIDE_REPOS = ["harissuhail124", "haris-suhail"]; // repo names to never show
+const HIDE_REPOS = ["harissuhail124", "haris-suhail", "gutech-portal", "bagsnbags"]; // repo names to never show
 
 const FEATURED = [
-  { slug: "unscroll", name: "Unscroll: Digital Well-Being App", desc: "A progressive web app helping school and university students build healthier screen habits. Built for my Design Thinking midterm sprint, informed by a student survey and interviews.",
-    details: ["Built as a progressive web app, so it works well on phones", "Designed around a 13-question student survey and anonymised interviews", "Made for my Design Thinking midterm sprint on digital well-being and mental health", "Deployed on Vercel"],
-    tags: ["PWA", "Design Thinking", "User Research"], url: "https://unscroll-seven.vercel.app", label: "Live demo" },
-  { slug: "bagsnbags", name: "Bags’n’Bags", desc: "The website for my retail business in Karachi, a shop I have run alongside my studies since June 2023.",
-    details: ["The online home of the shop I run in Karachi", "Deployed on Vercel", "Shaped by day-to-day experience of stock, sales and customers"],
-    tags: ["Web", "Business"], url: "https://bagsnbags.vercel.app", label: "Visit site" }
+  { slug: "unscroll", name: "Unscroll: Digital Well-Being Web App", meta: "Nov 2026 · Design Thinking course project, GUTECH", desc: "An installable, privacy-first web app that helps students break the doom-scrolling habit with a mindful pause, offline alternatives, a post-scroll check-in and gentle nudges instead of hard locks.",
+    details: ["Four features: Pause (30-second breathing prompt), Swap (activity ideas and daily quests), Reflect (private check-ins with a 14-day chart) and Reach (copy-ready messages and a saved counselor contact)", "Private by design: no account, no tracking, all data stays on the user’s device", "Grounded in research: 9 student interviews, a 19-response survey and 4 published studies, then 5 student user tests", "Built in a three-person team with HTML, CSS, JavaScript and PWA, deployed on Vercel"],
+    tags: ["PWA", "JavaScript", "Design Thinking", "User Research"], url: "https://unscroll-seven.vercel.app", label: "Live demo" },
+  { slug: "lms-gutech", name: "LMS GU Tech: Learning Space", meta: "In development", desc: "An internal learning workspace front-end built with Next.js (App Router), TypeScript and Supabase.",
+    details: ["Responsive front-end with Next.js (App Router) and TypeScript", "Supabase SSR Auth for email/password login, with no public registration: access is limited to pre-created internal accounts", "Cookie-based session refresh and route protection, so the workspace requires a valid session", "Security-minded: no credentials in source control, and role checks planned through the authenticated profile and database RLS"],
+    tags: ["Next.js", "TypeScript", "Supabase"], url: "https://gutech-portal-kappa.vercel.app/", label: "Live demo", repo: "https://github.com/harissuhail124/gutech-portal" },
+  { slug: "bagsnbags", name: "Bags’n’Bags: E-Commerce Web App", meta: "Nov 2026", desc: "An online store for bags and leather goods, built for the retail business I run in Karachi, with MongoDB as its database.",
+    details: ["The online storefront for Bags’n’Bags, the shop I have run in Karachi since June 2023", "Uses MongoDB for its data", "Deployed on Vercel", "Shaped by day-to-day experience of stock, sales and customers"],
+    tags: ["E-commerce", "MongoDB", "Vercel"], url: "https://bagsnbags.vercel.app/", label: "Live site", repo: "https://github.com/harissuhail124/bagsnbags" }
 ];
 
 /* LeetCode: fill in stats and problems when you like; empty ones stay hidden. */
@@ -207,12 +213,12 @@ const LEETCODE = {
 
 /* Add new posts at the top. "body" is a list of paragraphs. */
 const POSTS = [
-  { slug: "bagsnbags", title: "Taking my shop online: Bags’n’Bags", date: "2026-11-23", tags: ["Web", "Vercel", "Business"],
-    excerpt: "Why I built a website for the shop I run, and what running it taught me.",
-    url: "https://bagsnbags.vercel.app", urlLabel: "Visit Bags’n’Bags",
+  { slug: "bagsnbags", title: "Taking my shop online: Bags’n’Bags", date: "2026-11-23", tags: ["E-commerce", "MongoDB", "Vercel"],
+    excerpt: "Why I built an e-commerce site for the shop I run, and what running it taught me.",
+    url: "https://bagsnbags.vercel.app/", urlLabel: "Visit Bags’n’Bags",
     body: [
-      "Since June 2023 I have run Bags’n’Bags, a retail business in Karachi, alongside my studies. Managing stock, sales records and customers every day shows you quickly what a business really needs from its website: clear products, fast loading and an easy way to get in touch.",
-      "The site is deployed on Vercel at bagsnbags.vercel.app. Building it let me apply what I learn in class to something real, and keeping it simple was a deliberate choice, because most customers visit from their phones."
+      "Since June 2023 I have run Bags’n’Bags, a retail business in Karachi, alongside my studies. Managing stock, sales records and customers every day shows you quickly what a store’s website really needs: clear products, fast loading and an easy way to get in touch.",
+      "The result is an e-commerce web app for bags and leather goods. It uses MongoDB as its database and is deployed on Vercel at bagsnbags.vercel.app. Building it let me apply what I learn in class to a real business, and I kept it simple on purpose, because most customers visit from their phones."
     ] },
   { slug: "supabase", title: "How Supabase actually works", date: "2026-11-23", tags: ["Supabase", "PostgreSQL", "Backend"],
     excerpt: "It is not magic: it is PostgreSQL with a set of services wrapped around it.",
@@ -260,6 +266,7 @@ function fmt(d) { return new Date(d).toLocaleDateString("en-GB", { day: "numeric
 
 const BASE_TITLE = document.title;
 let REPOS = [], reposState = "loading";
+function fLinks(p) { const l = []; if (p.url) l.push([p.url, p.label || "Open"]); if (p.repo) l.push([p.repo, "GitHub"]); return l; }
 function ext(u) { return /^https?:/.test(u) ? u : "https://" + u; }
 
 function projectCard(slug, name, desc, tags, meta, links) {
@@ -273,7 +280,7 @@ function projectCard(slug, name, desc, tags, meta, links) {
 }
 
 /* featured projects */
-FEATURED.forEach(p => $("#featured").appendChild(projectCard(p.slug, p.name, p.desc, p.tags, "", p.url ? [[p.url, p.label || "Open"]] : [])));
+FEATURED.forEach(p => $("#featured").appendChild(projectCard(p.slug, p.name, p.desc, p.tags, p.meta || "", fLinks(p))));
 
 /* GitHub repos */
 async function loadRepos() {
@@ -310,7 +317,7 @@ function showProject(slug) {
   let name, desc, tags = [], links = [], points = [], meta = "";
   const f = FEATURED.find(x => x.slug === slug);
   const r = !f && REPOS.find(x => x.name.toLowerCase() === slug);
-  if (f) { name = f.name; desc = f.desc; tags = f.tags; points = f.details || []; if (f.url) links.push([f.url, f.label || "Open"]); }
+  if (f) { name = f.name; desc = f.desc; tags = f.tags; meta = f.meta || ""; points = f.details || []; links = fLinks(f); }
   else if (r) {
     name = r.name.replace(/[-_]+/g, " "); desc = r.description || "No description yet.";
     tags = [r.language].concat(r.topics || []).filter(Boolean); meta = "Last updated " + fmt(r.pushed_at);
